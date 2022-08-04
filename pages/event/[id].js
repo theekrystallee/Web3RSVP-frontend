@@ -47,9 +47,9 @@ function Event({ event }) {
         });
         setLoading(true);
         console.log("Minting...", txn.hash);
-
         await txn.wait();
         console.log("Minted -- ", txn.hash);
+        
         setSuccess(true);
         setLoading(false);
         setMessage("Your RSVP has been created successfully.");
