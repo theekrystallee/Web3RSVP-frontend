@@ -323,12 +323,12 @@ export default function CreateEvent() {
             </span>
           </div>
         )}
-        {!account && (
+        {/* {!account && (
           <section className="flex flex-col items-start py-8">
             <p className="mb-4">Please connect your wallet to create events.</p>
             <ConnectButton />
           </section>
-        )}
+        )} */}
       </section>
     </div>
   );

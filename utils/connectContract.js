@@ -2,13 +2,13 @@ import abiJSON from "../utils/Web3RSVP.json";
 import { ethers } from "ethers";
 
 function connectContract() {
-    const contractAddress = "0x1ce25B0230331FB8cB9438124343B4392fF55A37";
+    const contractAddress = "0x0D4Fa8A491F6B4a8D8d3494026e7544c0e508096";
     const contractABI = abiJSON.abi;
     let rsvpContract;
     try {
         const { ethereum } = window;
   
-        if (ethereum.chainId === "0x13881") {
+        if (ethereum) {
           //checking for eth object in the window, see if they have wallet connected to Mumbai network
           const provider = new ethers.providers.Web3Provider(ethereum);
           const signer = provider.getSigner();
