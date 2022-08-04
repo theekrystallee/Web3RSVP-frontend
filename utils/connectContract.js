@@ -19,7 +19,7 @@ function connectContract() {
             signer
           ); // instantiating new connection to the contract
         } else {
-          throw new Error('Please connect to the Polygon Mumbai network.')
+          throw new Error('please connect to the polygon mumbai network.')
         }
       } catch (error) {
         console.log("ERROR:", error);

@@ -29,7 +29,7 @@ export default function Dashboard({ page, isUpcoming, children }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Head>
-        <title>My Dashboard | web3rsvp</title>
+        <title>my Dashboard | web3 RSVP</title>
         <meta name="description" content="Manage your events and RSVPs" />
       </Head>
       <div className="flex flex-wrap py-8">
@@ -40,7 +40,7 @@ export default function Dashboard({ page, isUpcoming, children }) {
           </h1>
           <div className="sm:hidden">
             <label htmlFor="tabs" className="sr-only">
-              Select a tab
+              select a tab
             </label>
             <select
               id="tabs"
