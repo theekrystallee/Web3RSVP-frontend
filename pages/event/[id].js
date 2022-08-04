@@ -179,7 +179,6 @@ export default Event;
 
 export async function getServerSideProps(context) {
   const { id } = context.params;
-  console.log(id);
 
   const { data } = await client.query({
     query: gql`
