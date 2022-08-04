@@ -12,9 +12,7 @@ import Alert from "../../../components/Alert";
 
 function PastEvent({ event }) {
   const { data: account } = useAccount();
-
-  console.log("event", event);
-
+  // console.log("event", event);
   const [success, setSuccess] = useState(null);
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -23,12 +21,12 @@ function PastEvent({ event }) {
   const confirmAttendee = async (attendee) => {
     try {
       const rsvpContract = connectContract();
-
+  
       if (rsvpContract) {
         const txn = await rsvpContract.confirmAttendee(event.id, attendee);
         setLoading(true);
         console.log("Minting...", txn.hash);
-
+  
         await txn.wait();
         console.log("Minted -- ", txn.hash);
         setSuccess(true);
@@ -39,9 +37,6 @@ function PastEvent({ event }) {
       }
     } catch (error) {
       setSuccess(false);
-      // setMessage(
-      //   `Error: ${process.env.NEXT_PUBLIC_TESTNET_EXPLORER_URL}tx/${txn.hash}`
-      // );
       setMessage("Error!");
       setLoading(false);
       console.log(error);
@@ -52,7 +47,7 @@ function PastEvent({ event }) {
     console.log("confirmAllAttendees");
     try {
       const rsvpContract = connectContract();
-
+  
       if (rsvpContract) {
         console.log("contract exists");
         const txn = await rsvpContract.confirmAllAttendees(event.id, {
@@ -61,7 +56,7 @@ function PastEvent({ event }) {
         console.log("await txn");
         setLoading(true);
         console.log("Mining...", txn.hash);
-
+  
         await txn.wait();
         console.log("Mined -- ", txn.hash);
         setSuccess(true);
@@ -72,9 +67,6 @@ function PastEvent({ event }) {
       }
     } catch (error) {
       setSuccess(false);
-      // setMessage(
-      //   `Error: ${process.env.NEXT_PUBLIC_TESTNET_EXPLORER_URL}tx/${txn.hash}`
-      // );
       setMessage("Error!");
       setLoading(false);
       console.log(error);
@@ -82,7 +74,6 @@ function PastEvent({ event }) {
   };
 
   function checkIfConfirmed(event, address) {
-    // console.log(event.confirmedAttendees);
     for (let i = 0; i < event.confirmedAttendees.length; i++) {
       let confirmedAddress = event.confirmedAttendees[i].attendee.id;
       if (confirmedAddress.toLowerCase() == address.toLowerCase()) {
