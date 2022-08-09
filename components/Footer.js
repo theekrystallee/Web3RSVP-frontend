@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="mt-8 md:mt-0 md:order-1">
           <p className="text-center text-base text-gray-500 hover:text-gray-800">
             <a href="https://www.30daysofweb3.xyz/" target="blank">
-              &copy; 2022&nbsp; #30aysofweb3
+              &copy; 2022&nbsp; #30daysofweb3
             </a>
           </p>
         </div>
