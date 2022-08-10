@@ -28,4 +28,4 @@ The page auto-updates as you edit the components.
 
 <img width="700" src="https://user-images.githubusercontent.com/56278409/182893785-c998cd5d-3595-412e-acdb-7130e54365ca.png">
 
-### https://web3-rsvp-frontend-mu.vercel.app
+### web3-rsvp-frontend.vercel.app/
